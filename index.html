@@ -1,11 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina de Ejercicios</title>
+    <meta name="description" content="Taller de ejercicios prácticos de manipulación del DOM con JavaScript - Ejercicios interactivos para aprender desarrollo web">
+    <meta name="author" content="Cristian Camilo Rivillas">
+    <meta name="keywords" content="DOM, JavaScript, ejercicios, desarrollo web, programación">
+    <title>DOM Taller - Ejercicios de JavaScript | Cristian Camilo Rivillas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12" role="banner">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">DOM Taller</h1>
+            <p class="text-gray-600 text-lg">Ejercicios de manipulación del DOM con JavaScript</p>
+            <address class="text-sm text-gray-500 mt-2 not-italic">
+                Por <strong>Cristian Camilo Rivillas</strong>
+            </address>
+        </header>
+
+        <!-- Navegación Principal -->
+        <main role="main">
+            <section aria-labelledby="ejercicios-titulo">
+                <h2 id="ejercicios-titulo" class="sr-only">Lista de ejercicios disponibles</h2>
+                <nav aria-label="Navegación de ejercicios" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" role="navigation">
+                
+                    <!-- Ejercicio 1 -->
+                    <article class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                        <header>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Ejercicio 1</h3>
+                            <p class="text-gray-600 mb-4">Seleccionar y Mostrar elementos</p>
+                        </header>
+                        <a href="ejercicio1/ejercicio1.html" 
+                           class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors focus:ring-2 focus:ring-blue-300 focus:outline-none"
+                           aria-label="Ir al ejercicio 1: Seleccionar y Mostrar elementos">
+                            Ver Ejercicio
+                        </a>
+                    </article>
+
+                    <!-- Ejercicio 2 -->
+                    <article class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                        <header>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Ejercicio 2</h3>
+                            <p class="text-gray-600 mb-4">Modificar elementos</p>
+                        </header>
+                        <a href="ejercicio2/ejer2.html" 
+                           class="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition-colors focus:ring-2 focus:ring-green-300 focus:outline-none"
+                           aria-label="Ir al ejercicio 2: Modificar elementos">
+                            Ver Ejercicio
+                        </a>
+                    </article>
+
+
+                    <article class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                        <header>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Ejercicio 3</h3>
+                            <p class="text-gray-600 mb-4">Crear y eliminar elementos</p>
+                        </header>
+                        <a href="ejercicio3/ejer3.html" 
+                           class="inline-block bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded transition-colors focus:ring-2 focus:ring-purple-300 focus:outline-none"
+                           aria-label="Ir al ejercicio 3: Crear y eliminar elementos">
+                            Ver Ejercicio
+                        </a>
+                    </article>
+
+            
+                    <article class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                        <header>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Ejercicio 4</h3>
+                            <p class="text-gray-600 mb-4">Reemplazar elementos</p>
+                        </header>
+                        <a href="ejercicio4/ejer4.html" 
+                           class="inline-block bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition-colors focus:ring-2 focus:ring-red-300 focus:outline-none"
+                           aria-label="Ir al ejercicio 4: Reemplazar elementos">
+                            Ver Ejercicio
+                        </a>
+                    </article>
+
+                    
+                    <article class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                        <header>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Ejercicio 5</h3>
+                            <p class="text-gray-600 mb-4">Manejo de eventos</p>
+                        </header>
+                        <a href="ejercicio5/ejer5.html" 
+                           class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded transition-colors focus:ring-2 focus:ring-yellow-300 focus:outline-none"
+                           aria-label="Ir al ejercicio 5: Manejo de eventos">
+                            Ver Ejercicio
+                        </a>
+                    </article>
+
+                    
+                    <article class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                        <header>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-3">Ejercicio 6</h3>
+                            <p class="text-gray-600 mb-4">Gestión de tareas (Proyecto final)</p>
+                        </header>
+                        <a href="ejercicio6/gestionDeTareas.html" 
+                           class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded transition-colors focus:ring-2 focus:ring-indigo-300 focus:outline-none"
+                           aria-label="Ir al ejercicio 6: Gestión de tareas - Proyecto final">
+                            Ver Ejercicio
+                        </a>
+                    </article>
+
+                </nav>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12" role="contentinfo">
+            <p class="text-gray-500 mb-2">Taller de DOM con JavaScript y Tailwind CSS</p>
+            <p class="text-sm text-gray-400">
+                © 2025 <strong>Cristian Camilo Rivillas</strong>. Todos los derechos reservados.
+            </p>
+            <p class="text-xs text-gray-400 mt-1">
+                Material educativo para el aprendizaje de manipulación del DOM, MIOOO XD.
+            </p>
+        </footer>
+    </div>
 </body>
 </html>
