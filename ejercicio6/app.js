@@ -97,6 +97,7 @@ $containerAllTasks.addEventListener("click", deleteTask);
 
 
 function toggleComplete(e) {
+    e.preventDefault(); //evito que ahga un submit y se pierda las tareas
     // Buscar el botón, ya sea que clickees en él o en su hijo (icono) el va hacia arriba de donde d click buscando la clse del btn 
     const boton = e.target.closest(".btnStateTask");
     
