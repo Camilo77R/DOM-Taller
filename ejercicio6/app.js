@@ -1,4 +1,3 @@
-
 const $containerAllTasks = document.querySelector("#container-tasks");
 const $inputTxt = document.querySelector("#input-txt");
 const $btnAdd = document.querySelector("#btnAdd");
@@ -25,16 +24,15 @@ function createElementsTask(){
     divContainerBtn.className = styleDiv;
     
     let btnStateTask = document.createElement("button");
-    // btnStateTask.className = "isCompleted";
+    btnStateTask.className = "btnStateTask";
 
     let iconStateTask =document.createElement("i");
     let styleIcon = " fa-solid fa-circle text-orange-600";
     iconStateTask.className = styleIcon;
     
     let btnDeleteTask = document.createElement("button");
-    btnDeleteTask.id = "btnDelete";
     btnDeleteTask.textContent = "Delete";
-    btnDeleteTask.className = "bg-red-500 py-2 px-3 rounded-md text-white";
+    btnDeleteTask.className = "btnDelete  bg-red-500 py-2 px-3 rounded-md text-white";
 
     return{
         containerTask,
@@ -71,25 +69,80 @@ function createTask(){
 $btnAdd.addEventListener("click",(e)=>{
     e.preventDefault();
     createTask();
-    // const p = document.createElement("p");
-    // p.textContent = "PPPPPPP"
-    // $containerAllTasks.append(p);
 });
 
 
 
-function deleteTask(e){
-    if(e.target.id === "btnDelete"){
-        e.target.closest("article").remove();
+
+function deleteTask(e) {
+    if (e.target.classList.contains("btnDelete")) {
+        Swal.fire({
+        title: '¿Estás seguro de borrar esta tarea?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonText: 'No, cancelar'
+        }).then((result) => {
+        
+        if (result.isConfirmed) {
+            // closest es para ver si el padre de donde hice clik es article lo borro
+            e.target.closest("article").remove();
+        }
+        });
     }
 }
 
-// delegacion de eventos como no tengo el btn debrro uso a su padre par que esscuche los clicks de sus eleentos no importa si se crean antes o despues
+// delegacion de eventos como no tengo el btn de borrar uso a su padre par que esscuche los clicks de sus eleentos no importa si se crean antes o despues
+$containerAllTasks.addEventListener("click", deleteTask);
 
 
-function toggleComplete(elementos){
-    elementos.btnStateTask.classList.toggle("isCompleted");
-    elementos.btnDeleteTask.style.color = "green";
+function toggleComplete(e) {
+    // Buscar el botón, ya sea que clickees en él o en su hijo (icono) el va hacia arriba de donde d click buscando la clse del btn 
+    const boton = e.target.closest(".btnStateTask");
+    
+    if (boton) {
+        const iconoTask = boton.querySelector("i");
+        
+        if (iconoTask) {
+        iconoTask.classList.toggle("text-orange-600");
+        iconoTask.classList.toggle("text-green-500");
+        }
+    }
 }
+$containerAllTasks.addEventListener("click", toggleComplete);
 
-$containerAllTasks,addEventListener("click", toggleComplete);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function deleteTask(e){
+//     const quiereBorrar = confirm('¿Estás seguro de que quieres borrar este elemento?');
+//     if(quiereBorrar){
+
+//         if(e.target.id === "btnDelete"){
+//             e.target.closest("article").remove();
+//         }
+//     }else{
+//         console.log("No se borra la tarea");
+//     }
+// }
